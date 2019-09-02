@@ -10,6 +10,17 @@ main() {
 
     init_netrc;
 
+    release_to_heroku;
+
+}
+
+release_to_heroku() {
+    info "Releasing app to heroku";
+
+    heroku container:release web -a "$WERCKER_HEROKU_RELEASE_APP_NAME";
+
+    info "App released to heroku";
+
 }
 
 check_if_heroku_present() {
