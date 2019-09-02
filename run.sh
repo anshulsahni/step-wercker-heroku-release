@@ -18,7 +18,7 @@ check_if_heroku_present() {
 }
 
 init_netrc() {
-    local username="$WERCKER_HEROKU_RELEASE_USER";
+    local username="$WERCKER_HEROKU_RELEASE_USERNAME";
     local password="$WERCKER_HEROKU_RELEASE_PASSWORD";
     local netrcFile="$HOME/.netrc";
 
@@ -37,7 +37,7 @@ check_for_env_variables() {
         fail "app-name is missing it is required by heroku-release step";
     fi
 
-    if [ -z "$WERCKER_HEROKU_RELEASE_USER"]; then
+    if [ -z "$WERCKER_HEROKU_RELEASE_USERNAME"]; then
         fail "user is missing it is reuired by heroku-release step";
     fi
 
